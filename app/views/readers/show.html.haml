@@ -11,7 +11,7 @@
       and you can change the picture by 
       = link_to "giving yourself a gravatar.", "http://gravatar.com/signup"
 
-  = gravatar_for(@reader, {:size => 128}, {:class => 'big_gravatar'})
+  / = gravatar_for(@reader, {:size => 128}, {:class => 'big_gravatar'})
 
   - if @reader.description.blank?
     %p No description available.

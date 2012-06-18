@@ -26,13 +26,30 @@
               = render :partial => 'setting', :locals => {:key => 'reader.layout'}
             %td.notes
               The radiant layout that will be used to present reader-administration pages
+        - settings.sender do
+          %tr
+            %td.setting
+              %p
+                Email sender
+            %td.value
+              = render :partial => 'setting', :locals => {:key => 'reader.email_from_name'}
+            %td.notes
+              This is the name that automatic emails seem to come from
+          %tr
+            %td.setting
+              %p
+                Email reply-to
+            %td.value
+              = render :partial => 'setting', :locals => {:key => 'reader.email_from_address'}
+            %td.notes
+              This is the address that automatic emails seem to come from
         - settings.site do
           %tr
             %td.setting
               %p
                 Site title
             %td.value
-              = render :partial => 'setting', :locals => {:key => 'site.title'}
+              = render :partial => 'setting', :locals => {:key => 'site.name'}
             %td.notes
               This is the name by which forms and emails refer to your site
           %tr
@@ -44,25 +61,7 @@
             %td.notes
               This is the address we use to build links in emails
 
-        - settings.sender do
-          %tr
-            %td.setting
-              %p
-                Email sender
-            %td.value
-              = render :partial => 'setting', :locals => {:key => 'email.from_name'}
-            %td.notes
-              This is the name that automatic emails seem to come from
-          %tr
-            %td.setting
-              %p
-                Email reply-to
-            %td.value
-              = render :partial => 'setting', :locals => {:key => 'email.from_address'}
-            %td.notes
-              This is the address that automatic emails seem to come from
-
-#messages_table.outset      
+#messages_table.outset
   %table#messages.index{:cellspacing=>"0", :border=>"0", :cellpadding=>"0"}
     %thead
       %tr

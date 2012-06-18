@@ -6,6 +6,6 @@
   - if setting.key.ends_with?("?")
     %p{:id => "set_#{domkey}", :class => setting.value.to_s}
       = checkbox_for_setting(setting, label)
-  - else 
+  - else
     %p{:id => "set_#{domkey}"}
       = editable_setting(setting)

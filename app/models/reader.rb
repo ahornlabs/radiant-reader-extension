@@ -1,6 +1,6 @@
 require 'authlogic'
 require 'digest/sha1'
-require 'gravtastic'
+#require 'gravtastic'
 
 class Reader < ActiveRecord::Base
   @@user_columns = [:name, :email, :login, :created_at, :password, :notes]
@@ -10,7 +10,7 @@ class Reader < ActiveRecord::Base
 
   is_site_scoped if respond_to? :is_site_scoped
 
-  is_gravtastic :with => :email, :rating => 'PG', :size => 48
+  # is_gravtastic :with => :email, :rating => 'PG', :size => 48
   acts_as_authentic do |config|
     config.validations_scope = :site_id if defined? Site
     config.transition_from_restful_authentication = true
