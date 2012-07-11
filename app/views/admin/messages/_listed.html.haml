@@ -9,16 +9,16 @@
       %td.message_recipients
         %p
           - if message.delivered?
-            Sent to 
+            = t('sent_to')
             = message.recipients.count
             = pluralize(message.recipients.count, 'person')
           - else
-            Not yet sent
-            
+            = t('not_yet_sent')
+
     - tbody.modify_cell do
       %td.remove
         = link_to(image('edit', :alt => 'Edit message'), edit_admin_message_url(message))
         - if message.function.blank?
-          = link_to(image('remove', :alt => 'Remove message'), admin_message_url(message), :method => :delete, :confirm => "really delete message #{message.subject}?") 
+          = link_to(image('remove', :alt => 'Remove message'), admin_message_url(message), :method => :delete, :confirm => "really delete message '#{message.subject}?'")
         - else
           = image('noremove')

@@ -1,2 +1,9 @@
 de:
   access_denied: "Zugang verboten"
+  message: "Nachricht"
+  edit_message: "Nachricht ändern"
+  new_message: "Neue Nachricht"
+  subject: "Betreff"
+  delivery_status: "Status"
+  not_yet_sent: "Noch nicht gesendet"
+  sent_to: "Verschickt an:"
