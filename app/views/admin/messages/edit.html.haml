@@ -1,11 +1,11 @@
 - include_stylesheet('admin/messages')
 
-= render_region :top 
+= render_region :top
 - render_region :main do |main|
 
   - main.edit_header do
-    %h1 
-      Edit message
+    %h1
+      = t('edit_message')
     %p
       Press the 'save' button below to see how your message will look when laid out and addressed to someone, and to choose to whom it should be sent.
 
