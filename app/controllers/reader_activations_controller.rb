@@ -19,7 +19,7 @@ class ReaderActivationsController < ReaderActionController
     if current_reader
       @reader = current_reader
       @reader.send_activation_message
-      flash[:notice] = "Account activation instructions have been emailed to you."
+      flash[:notice] = "Informationen zur Aktivierung Ihres Accounts wurden Ihnen per E-Mail zugesendet."
     end
     render :action => 'show'
   end
@@ -28,12 +28,12 @@ class ReaderActivationsController < ReaderActionController
     if @reader
       @reader.activate!
       self.current_reader = @reader
-      flash[:notice] = "Thank you! Your account has been activated."
+      flash[:notice] = "Vielen Dank! Ihr Account wurde aktiviert."
       redirect_back_or_to default_activated_url
       
     else
-      @error = "Sorry: something was wrong in that link. Please check your email message."
-      flash[:error] = "Activation failed."
+      @error = "Entschuldigung: Der Link ist falsch. Bitte prüfen Sie Ihre E-Mailnachricht."
+      flash[:error] = "Aktivierung fehlgeschlagen."
       render :action => 'show'
     end
   end
@@ -47,7 +47,7 @@ protected
 
   def check_reader_inactive
     if @reader && @reader.activated?
-      flash[:notice] = "Hello #{@reader.name}! Your account is already active."
+      flash[:notice] = "Hello #{@reader.name}! Ihr Account ist bereits aktiviert."
       redirect_back_or_to default_activated_url
       false
     end

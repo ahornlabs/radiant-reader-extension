@@ -1,7 +1,7 @@
 class ReaderNotifier < ActionMailer::Base
 
   # this sets a default that will be overridden by the layout association of each message as it is sent out
-  radiant_layout "Reader"
+  radiant_layout "email"
   
   def message(reader, message, sender=nil)
     site = reader.site if reader.respond_to?(:site)
